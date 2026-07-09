@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>飯塚のWEB制作なら roision（ロイション）｜予約システム込みのホームページ制作</title>
-<meta name="description" content="福岡県飯塚市のWEB制作会社 roision（ロイション）。24時間ネット予約システム込みのホームページを初期¥19,800〜で制作します。整骨院・美容室・飲食店など、飯塚をはじめ福岡エリア・オンラインで対応。まずは無料デモから。">
-<meta name="keywords" content="飯塚 WEB制作,飯塚 ホームページ制作,飯塚 WEB制作会社,福岡 ホームページ制作,飯塚 予約システム,整骨院 ホームページ,roision,ロイション">
+<title>飯塚のWEB制作なら roision（ロイシオン）｜予約システム込みのホームページ制作</title>
+<meta name="description" content="福岡県飯塚市のWEB制作会社 roision（ロイシオン）。24時間ネット予約システム込みのホームページを初期¥19,800〜で制作します。整骨院・美容室・飲食店など、飯塚をはじめ福岡エリア・オンラインで対応。まずは無料デモから。">
+<meta name="keywords" content="飯塚 WEB制作,飯塚 ホームページ制作,飯塚 WEB制作会社,福岡 ホームページ制作,飯塚 予約システム,整骨院 ホームページ,roision,ロイシオン">
 <meta name="robots" content="index,follow">
 <meta name="author" content="Roision Tech（ロイシオンテック）">
 <link rel="canonical" href="https://roision.jp/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="roision（ロイション）">
+<meta property="og:site_name" content="roision（ロイシオン）">
 <meta property="og:title" content="飯塚のWEB制作なら roision｜予約システム込みのホームページ制作">
 <meta property="og:description" content="福岡・飯塚のWEB制作。24時間ネット予約込みのホームページを初期¥19,800〜。整骨院・美容室・飲食店など、飯塚をはじめ福岡・オンラインで対応。まずは無料デモから。">
 <meta property="og:url" content="https://roision.jp/">
@@ -22,7 +22,7 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "roision（ロイション）",
+  "name": "roision（ロイシオン）",
   "alternateName": "Roision Tech（ロイシオンテック）",
   "description": "福岡県飯塚市のWEB制作会社。24時間ネット予約システム込みのホームページを初期¥19,800〜で制作します。整骨院・美容室・飲食店など、飯塚をはじめ福岡エリア・オンラインで対応。",
   "url": "https://roision.jp/",
@@ -289,10 +289,14 @@ button{font-family:inherit;}
 @media(max-width:760px){.pl-costs{grid-template-columns:1fr;gap:1rem;}.pl-plus{font-size:1.5rem;}.pl-inc{grid-template-columns:1fr;}}
 
 /* manifesto */
-.mani p{font-weight:900;font-size:clamp(1.9rem,6vw,4.6rem);line-height:1.5;letter-spacing:.02em;
+.mani p{font-weight:900;font-size:clamp(1.9rem,6vw,4.6rem);line-height:1.28;letter-spacing:.02em;
   background:linear-gradient(90deg,var(--ink) 50%,var(--ink3) 50%);background-size:200% 100%;background-position:100% 0;
-  -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:.4em;}
+  -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:.5em;}
 .mani p em{font-style:normal;}
+/* 濃くなった少し後に、ライムの蛍光ペンが左→右に引かれる */
+.mani p{position:relative;z-index:0;isolation:isolate;}
+.mani p::before{content:"";position:absolute;left:-.04em;right:-.04em;top:52%;bottom:7%;background:var(--acid);z-index:-1;border-radius:2px;transform:scaleX(0);transform-origin:left center;transition:transform .6s cubic-bezier(.22,1,.36,1) .3s;}
+.mani p.hl::before{transform:scaleX(1);}
 
 /* capabilities */
 .caps{display:block;border-top:1px solid var(--line);}
@@ -316,6 +320,29 @@ button{font-family:inherit;}
 .proof-note .acid{color:var(--acid-ink);}
 .proof-hint{margin-top:1.2rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.24em;color:var(--ink3);text-transform:uppercase;}
 @media(max-width:860px){.proof-wrap{grid-template-columns:1fr;}}
+/* ===== PROOF GRAPH（来店前に調べる根拠） ===== */
+.proof-graph{background:#fff;border:1px solid var(--line);border-radius:20px;padding:clamp(1.7rem,3vw,2.6rem);box-shadow:0 18px 50px -30px rgba(95,122,0,.5);}
+.pg-donut{position:relative;width:clamp(140px,16vw,186px);margin:0 auto .3rem;}
+.pg-donut svg{width:100%;display:block;transform:rotate(-90deg);}
+.pg-track{fill:none;stroke:var(--line);stroke-width:11;}
+.pg-arc{fill:none;stroke:var(--acid-ink);stroke-width:11;stroke-linecap:round;stroke-dasharray:326.7;stroke-dashoffset:42.8;}
+.pg-donut-c{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+.pg-donut-c b{font-family:var(--en);font-weight:700;font-size:clamp(1.9rem,4.4vw,2.7rem);color:var(--ink);letter-spacing:-.01em;}
+.pg-donut-c small{font-size:.5em;color:var(--acid-ink);}
+.pg-cap{text-align:center;font-size:.9rem;color:var(--ink2);margin-bottom:1.7rem;line-height:1.6;}
+.pg-cap b{color:var(--ink);font-weight:700;}
+.pg-bar-top{display:flex;justify-content:space-between;align-items:baseline;font-size:.85rem;color:var(--ink2);margin-bottom:.5rem;gap:.6rem;}
+.pg-bar-top b{font-family:var(--en);font-size:1.25rem;color:var(--acid-ink);}
+.pg-bar{height:12px;background:var(--acid-dim);border-radius:99px;overflow:hidden;}
+.pg-bar i{display:block;height:100%;width:78%;background:var(--acid-ink);border-radius:99px;}
+.pg-src{margin-top:1.3rem;font-size:.62rem;color:var(--ink3);line-height:1.6;}
+/* ===== 装飾：連絡先両端の粒子（別形状） ===== */
+.contact{position:relative;overflow:hidden;}
+.deco-cloud{position:absolute;top:50%;transform:translateY(-50%);width:clamp(150px,15vw,240px);aspect-ratio:1/1;opacity:.5;pointer-events:none;z-index:0;}
+.deco-cloud.l{left:max(.5rem,2.5vw);}
+.deco-cloud.r{right:max(.5rem,2.5vw);}
+.contact .inner{position:relative;z-index:1;}
+@media(max-width:1180px){.deco-cloud{display:none;}}
 
 /* contact */
 .contact{text-align:center;border-top:1px solid var(--line);background:var(--bg2);}
@@ -370,6 +397,8 @@ footer b{color:var(--ink2);}
 .vh-h1 .mk{background:linear-gradient(transparent 60%,var(--acid) 60%);padding:0 .08em;}
 .vh-sub{margin-top:1.5rem;max-width:34em;font-size:clamp(.95rem,1.5vw,1.06rem);line-height:1.95;color:var(--ink2);}
 .vh-sub b{color:var(--ink);font-weight:700;}
+.vh-cred{margin-top:.9rem;font-size:.74rem;color:var(--ink3);letter-spacing:.02em;line-height:1.6;}
+.vh-cred b{color:var(--acid-ink);font-weight:700;}
 .vh-price{margin-top:1.9rem;display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;}
 .vh-price .now{font-family:var(--en);font-weight:900;font-size:clamp(2.2rem,5vw,3rem);line-height:1;letter-spacing:-.01em;color:var(--ink);}
 .vh-price .now .y{font-size:.5em;}
@@ -443,15 +472,16 @@ footer b{color:var(--ink2);}
   <div class="vh-grid">
     <!-- 左：価値＋価格＋強み＋CTA -->
     <div class="rv">
-      <p class="vh-eyebrow">飯塚のWEB制作会社 ／ 福岡・オンライン対応</p>
+      <p class="vh-eyebrow">飯塚のWEB制作会社 ／ 福岡・オンライン対応可</p>
       <h1 class="vh-h1"><span class="mk">“予約も込み”</span>の<br>ホームページを、<br>あなたのお店に。</h1>
       <p class="vh-sub">
-        飯塚を拠点にする国家資格持ちの作り手が、ホームページ・24時間ネット予約・スマホ対応まで丸ごと。
+        福岡県飯塚市を拠点に、国家資格を持つ作り手が、ホームページ・24時間ネット予約・スマホ対応まで丸ごと。
         <b>まず完成イメージを無料でお作りします。</b>気に入らなければ0円です。
       </p>
+      <p class="vh-cred"><b>保有資格：</b>応用情報技術者（国家資格）／ 情報処理安全確保支援士試験 合格</p>
       <div class="vh-price">
         <span class="now"><span class="y">¥</span>19,800<span style="font-size:.5em;font-weight:500;">〜</span></span>
-        <span class="tag">買い切り</span>
+        <span class="tag">初期費用</span>
         <span class="was">通常 ¥49,800</span>
         <span class="note">モニター院 先着3院まで</span>
       </div>
@@ -479,7 +509,7 @@ footer b{color:var(--ink2);}
         </div>
         <div class="cr">
           <div class="lb">料金</div>
-          <div class="a">月¥9,800〜</div>
+          <div class="a">初期3万+月¥9,800<br>実質5〜10万円超</div>
           <div class="a">40万円〜</div>
           <div class="b">初期¥19,800<br>＋月¥3,000</div>
         </div>
@@ -502,7 +532,7 @@ footer b{color:var(--ink2);}
           <div class="b">いつでも解約</div>
         </div>
       </div>
-      <p class="vh-cmp-note">※ 一般的な月額制サービス／地元の制作会社の例との比較（2026年時点・当社調べ）。ネット予約・LINE即時通知・月次レポートは毎月の運用サポートに含まれます。最低契約期間はなく、いつでも解約できます。</p>
+      <p class="vh-cmp-note">※ 一般的な月額制サービス／地元の制作会社の例との比較（2026年時点・当社調べ）。格安月額HPは初期費用や契約期間の縛りがある場合が多く、総額では割高になることがあります。ネット予約・LINE即時通知・月次レポートは毎月の運用サポートに含まれます。roisionは最低契約期間なし・いつでも解約できます。</p>
     </div>
   </div>
 </header>
@@ -517,11 +547,11 @@ footer b{color:var(--ink2);}
     </div>
 
     <div class="pl-panel rv">
-      <span class="pl-badge">ロイション標準プラン</span>
+      <span class="pl-badge">ロイシオン標準プラン</span>
       <div class="pl-costs">
         <div class="pl-cost">
           <p class="pl-kicker">初期 ／ 制作</p>
-          <div class="pl-price"><span class="amt">¥19,800</span><span class="buy">買い切り</span></div>
+          <div class="pl-price"><span class="amt">¥19,800</span><span class="buy">初期費用</span></div>
           <p class="pl-sub"><s>通常 ¥49,800</s>　<span class="hl">モニター院 先着3院</span></p>
           <p class="pl-cost-desc">御社名義で納品・サーバー代¥0。一度きりのお支払いです。</p>
         </div>
@@ -575,11 +605,12 @@ footer b{color:var(--ink2);}
   <div class="v-in">
     <p class="sec-tag rv">Mission</p>
     <h2 class="rv rv-d1">飯塚から、<em>未来</em>を実装する。</h2>
-    <p class="lead rv rv-d2">学生生活でお世話になった、この街から始めたい。世界のどこでも作れるものを、あえて飯塚で。商店の予約システムから、地場企業のAI導入まで——<b>テクノロジーの恩恵を、まず自分たちの足元へ。</b>その積み重ねの先に、地方から始まる未来があると信じています。</p>
+    <p class="lead rv rv-d2">飯塚で商店の予約システムから、地場企業のAI導入まで——<b>テクノロジーの恩恵を、まず自分たちの足元へ。</b>その積み重ねの先に、地方から始まる未来があると信じています。</p>
     <div class="chips rv rv-d3">
       <span class="chip">Local First</span>
       <span class="chip">Ship Fast</span>
       <span class="chip">No Hype, Just Build</span>
+      <span class="chip">他社より安い安心価格</span>
     </div>
   </div>
 </section>
@@ -596,7 +627,7 @@ footer b{color:var(--ink2);}
   <div class="inner">
     <p class="sec-tag">Manifesto</p>
     <div class="mani">
-      <p>繰り返す仕事は、機械へ。</p>
+      <p>繰り返す仕事は、自動化へ。</p>
       <p>人の時間は、判断と創造へ。</p>
       <p>最先端を、地方の現場へ。</p>
     </div>
@@ -637,7 +668,18 @@ footer b{color:var(--ink2);}
   <div class="inner">
     <p class="sec-tag">Why Web &amp; AI</p>
     <div class="proof-wrap">
-      <canvas id="cloud" aria-hidden="true"></canvas>
+      <div class="proof-graph rv" role="img" aria-label="来店前にネットで調べて院を選ぶ人が多いことを示すデータ">
+        <div class="pg-donut">
+          <svg viewBox="0 0 120 120"><circle class="pg-track" cx="60" cy="60" r="52"/><circle class="pg-arc" cx="60" cy="60" r="52"/></svg>
+          <div class="pg-donut-c"><b>86.9<small>%</small></b></div>
+        </div>
+        <p class="pg-cap"><b>院選びで「口コミ」を参考にする</b>人の割合</p>
+        <div class="pg-bar-wrap">
+          <div class="pg-bar-top"><span>来店前にネットで下調べする</span><b>78%</b></div>
+          <div class="pg-bar"><i></i></div>
+        </div>
+        <p class="pg-src">出典：インターリンク（2022, n=1,000）／ Pathee（2021, n=4,411）</p>
+      </div>
       <div class="proof-note rv">
         <p style="font-weight:900;font-size:clamp(1.5rem,4vw,2.4rem);color:var(--ink);line-height:1.4;margin-bottom:1.2rem;">来店の前に、<br>選ばれている。</p>
         <p>いまのお客様は、行く前に必ずスマホで調べます。<b>ネットで見つからない・情報が古い</b>お店は、それだけで候補から外れる時代。ホームページと予約導線は、もう「あった方がいい」ではなく<span class="acid">「ないと選ばれない」インフラ</span>になりました。</p>
@@ -649,10 +691,12 @@ footer b{color:var(--ink2);}
 
 <!-- CONTACT -->
 <section class="sec contact" id="contact">
+  <canvas class="deco-cloud l" id="cloudA" aria-hidden="true"></canvas>
+  <canvas class="deco-cloud r" id="cloudB" aria-hidden="true"></canvas>
   <div class="inner">
     <p class="sec-tag" style="justify-content:center;">Contact</p>
     <p class="big rv">話し<span class="acid">ましょう</span>。</p>
-    <p class="resp" style="margin-top:1.2rem;">「こんなこと出来る？」の一言でも大丈夫。<b>24時間以内に返信します。</b></p>
+    <p class="resp" style="margin-top:1.2rem;">気軽にお問い合わせください。</p>
 
     <!-- ▼ お問い合わせフォーム：access_key の YOUR_ACCESS_KEY を Web3Forms のアクセスキーに差し替えてください ▼ -->
     <form id="contactForm" class="cform rv" action="https://api.web3forms.com/submit" method="POST">
@@ -682,7 +726,7 @@ footer b{color:var(--ink2);}
       </div>
       <div class="cf-field">
         <label for="cf-msg">ご相談内容<span class="req">*</span></label>
-        <textarea id="cf-msg" name="message" required placeholder="例：整骨院のホームページを作りたい。24時間ネット予約もつけたいです。"></textarea>
+        <textarea id="cf-msg" name="message" required placeholder="例：&#10;・ネット予約付きの自社ホームページを作ってみたい。&#10;・チャットボットを作ってみたい。&#10;・AIについて教えてほしい。　などなど"></textarea>
       </div>
       <button type="submit" class="cf-submit">送信する →</button>
       <p class="cf-note">※ いただいた情報は、お問い合わせへの返信のみに利用します。<br>うまく送れない場合は <a href="mailto:info@roision.jp">info@roision.jp</a> へ直接どうぞ。</p>
@@ -1020,6 +1064,9 @@ function onScroll(){
 addEventListener('scroll',onScroll,{passive:true});onScroll();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}}),{threshold:.15});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+/* manifesto: 文字が濃くなった後に蛍光ペンを引く（行が7.5割見えたら発火→CSS側で.3s遅延） */
+const maniIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('hl');maniIO.unobserve(e.target);}}),{threshold:.75});
+maniPs.forEach(p=>maniIO.observe(p));
 
 /* ================= CURSOR ================= */
 if(!isTouch && !reduced){
@@ -1047,88 +1094,58 @@ if(!isTouch && !reduced){
   });
 }
 
-/* ================= POINT CLOUD (drag-rotate, morphing) ================= */
-(function cloud(){
-  const c=document.getElementById('cloud');
-  const ctx=c.getContext('2d');
-  const DPR=Math.min(devicePixelRatio||1,2);
-  const N=620;
-  function resize(){c.width=c.offsetWidth*DPR;c.height=c.offsetHeight*DPR;}
-  resize();addEventListener('resize',resize);
-  // 形状定義
-  const shapes=[];
-  {// sphere (fibonacci)
-    const a=[];const phi=Math.PI*(3-Math.sqrt(5));
-    for(let i=0;i<N;i++){const y=1-(i/(N-1))*2;const r=Math.sqrt(1-y*y);const th=phi*i;
-      a.push([Math.cos(th)*r,y,Math.sin(th)*r]);}
-    shapes.push(a);
-  }
-  {// cube surface
-    const a=[];let i=0;
-    while(a.length<N){
-      const f=i%6;const u=((i*0.618034)%1)*2-1;const v=((i*0.381966)%1)*2-1;
-      const s=0.82;
-      if(f===0)a.push([u*s,v*s,s]);else if(f===1)a.push([u*s,v*s,-s]);
-      else if(f===2)a.push([u*s,s,v*s]);else if(f===3)a.push([u*s,-s,v*s]);
-      else if(f===4)a.push([s,u*s,v*s]);else a.push([-s,u*s,v*s]);
-      i++;
-    }
-    shapes.push(a);
-  }
-  {// torus
+/* ================= POINT CLOUD（装飾・別形状を2つ） ================= */
+(function(){
+  function build(idx,N){
     const a=[];
-    for(let i=0;i<N;i++){
-      const u=(i/N)*Math.PI*2*13;const v=(i/N)*Math.PI*2;
-      const R=0.72,r2=0.3;
-      a.push([(R+r2*Math.cos(u))*Math.cos(v),r2*Math.sin(u),(R+r2*Math.cos(u))*Math.sin(v)]);
-    }
-    shapes.push(a);
+    if(idx===0){ const phi=Math.PI*(3-Math.sqrt(5));
+      for(let i=0;i<N;i++){const y=1-(i/(N-1))*2;const r=Math.sqrt(1-y*y);const th=phi*i;a.push([Math.cos(th)*r,y,Math.sin(th)*r]);}
+    }else if(idx===1){ let i=0; while(a.length<N){const f=i%6;const u=((i*0.618034)%1)*2-1;const v=((i*0.381966)%1)*2-1;const s=0.82;
+        if(f===0)a.push([u*s,v*s,s]);else if(f===1)a.push([u*s,v*s,-s]);else if(f===2)a.push([u*s,s,v*s]);else if(f===3)a.push([u*s,-s,v*s]);else if(f===4)a.push([s,u*s,v*s]);else a.push([-s,u*s,v*s]);i++;}
+    }else{ for(let i=0;i<N;i++){const u=(i/N)*Math.PI*2*13;const v=(i/N)*Math.PI*2;const R=0.72,r2=0.3;a.push([(R+r2*Math.cos(u))*Math.cos(v),r2*Math.sin(u),(R+r2*Math.cos(u))*Math.sin(v)]);}}
+    return a;
   }
-  let cur=shapes[0].map(p=>[...p]);
-  let target=0, morphT=1;
-  setInterval(()=>{target=(target+1)%shapes.length;morphT=0;},4200);
-  // drag
-  let ax=-0.35,ay=0.6,vx=0.0028,vy=0.0016,drag=false,px=0,py=0;
-  c.addEventListener('pointerdown',e=>{drag=true;px=e.clientX;py=e.clientY;c.setPointerCapture(e.pointerId);});
-  c.addEventListener('pointermove',e=>{if(!drag)return;vy=(e.clientX-px)*0.0035;vx=(e.clientY-py)*0.0035;px=e.clientX;py=e.clientY;});
-  c.addEventListener('pointerup',()=>drag=false);
-  let vis=true;
-  new IntersectionObserver(es=>{vis=es[0].isIntersecting;}).observe(c);
-  function frame(){
-    requestAnimationFrame(frame);
-    if(!vis)return;
-    if(!drag){vy*=0.985;vx*=0.985;if(Math.abs(vy)<0.0016)vy=0.0016;}
-    ay+=vy;ax+=vx*(drag?1:0.4);
-    if(morphT<1)morphT=Math.min(1,morphT+0.02);
-    const e=1-Math.pow(1-morphT,3);
-    const tgt=shapes[target];
-    const W=c.width,H=c.height,S=Math.min(W,H)*0.34;
-    ctx.clearRect(0,0,W,H);
-    const ca=Math.cos(ax),sa=Math.sin(ax),cb=Math.cos(ay),sb=Math.sin(ay);
-    const pts=[];
-    for(let i=0;i<N;i++){
-      const p=cur[i],t=tgt[i];
-      p[0]+=(t[0]-p[0])*e*0.08+((i%7)-3)*0.00003;
-      p[1]+=(t[1]-p[1])*e*0.08;
-      p[2]+=(t[2]-p[2])*e*0.08;
-      // rotate
-      let x=p[0]*cb+p[2]*sb, z=-p[0]*sb+p[2]*cb;
-      let y=p[1]*ca-z*sa; z=p[1]*sa+z*ca;
-      const persp=1.9/(1.9+z);
-      pts.push([W/2+x*S*persp,H/2+y*S*persp,z,persp]);
+  function makeCloud(id,idx){
+    const c=document.getElementById(id); if(!c) return;
+    const ctx=c.getContext('2d');
+    const DPR=Math.min(devicePixelRatio||1,2);
+    const N=340;
+    const P=build(idx,N);
+    function resize(){c.width=c.offsetWidth*DPR;c.height=c.offsetHeight*DPR;}
+    resize();addEventListener('resize',resize);
+    let ax=-0.35, ay=0.6+idx*1.3, vy=0.0016, vx=0.0011;
+    if(typeof reduced!=='undefined' && reduced){vy=0;vx=0;}
+    let vis=true;
+    new IntersectionObserver(es=>{vis=es[0].isIntersecting;}).observe(c);
+    function frame(){
+      requestAnimationFrame(frame);
+      if(!vis)return;
+      ay+=vy; ax+=vx*0.4;
+      const W=c.width,H=c.height,S=Math.min(W,H)*0.36;
+      ctx.clearRect(0,0,W,H);
+      const ca=Math.cos(ax),sa=Math.sin(ax),cb=Math.cos(ay),sb=Math.sin(ay);
+      const proj=[];
+      for(let i=0;i<N;i++){
+        const p=P[i];
+        let x=p[0]*cb+p[2]*sb, z=-p[0]*sb+p[2]*cb;
+        let y=p[1]*ca-z*sa; z=p[1]*sa+z*ca;
+        const persp=1.9/(1.9+z);
+        proj.push([W/2+x*S*persp,H/2+y*S*persp,z,persp]);
+      }
+      proj.sort((a,b)=>b[2]-a[2]);
+      for(const [x,y,z,persp] of proj){
+        const depth=(1-z)/2;
+        const r=Math.max(0.5,persp*1.7*DPR*0.8);
+        ctx.beginPath();ctx.arc(x,y,r,0,7);
+        if(depth>0.72){ctx.fillStyle=`rgba(122,158,0,${0.5+depth*0.4})`;}
+        else{ctx.fillStyle=`rgba(45,48,38,${0.12+depth*0.42})`;}
+        ctx.fill();
+      }
     }
-    pts.sort((a,b)=>b[2]-a[2]);
-    for(const [x,y,z,persp] of pts){
-      const depth=(1-z)/2;
-      const r=Math.max(0.6,persp*2.1*DPR*0.8);
-      ctx.beginPath();ctx.arc(x,y,r,0,7);
-      if(depth>0.72){ctx.fillStyle=`rgba(122,158,0,${0.55+depth*0.45})`;}
-      else{ctx.fillStyle=`rgba(45,48,38,${0.14+depth*0.5})`;}
-      ctx.fill();
-    }
+    frame();
   }
-  if(reduced){ /* 静止1フレーム */ vy=0;vx=0; frame(); }
-  else frame();
+  makeCloud('cloudA',0); // 球体（左）
+  makeCloud('cloudB',2); // トーラス（右）＝別形状
 })();
 
 /* ===== CONTACT FORM (Web3Forms AJAX submit) ===== */
