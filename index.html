@@ -422,8 +422,23 @@ footer b{color:var(--ink2);}
 .vh-cmp .cr.star .lb{color:var(--acid-ink);}
 .vh-cmp-note{margin-top:.85rem;font-size:.64rem;color:var(--ink3);line-height:1.55;}
 @media(max-width:900px){
-  .vh-grid{grid-template-columns:1fr;gap:2.2rem;}
+  .vh-grid{grid-template-columns:minmax(0,1fr);gap:2.2rem;}
+  .vh-grid>*{min-width:0;}
   .vhero{min-height:auto;padding-top:7rem;}
+}
+/* ===== 比較表：モバイル最適化（ラベルを行の見出しに昇格） ===== */
+@media(max-width:640px){
+  .vh-cmp .cr{grid-template-columns:1fr 1fr 1fr;}
+  .vh-cmp .hd>div:first-child{display:none;}
+  .vh-cmp .lb{grid-column:1/-1;padding:.65rem .8rem .15rem;font-size:.76rem;letter-spacing:.06em;color:var(--acid-ink);}
+  .vh-cmp .cr>div{padding:.35rem .4rem .85rem;font-size:.8rem;line-height:1.4;}
+  .vh-cmp .hd>div{font-size:.8rem;padding-top:.85rem;padding-bottom:.85rem;}
+  .vh-cmp .hd .roi{font-size:.9rem;}
+  .vh-cmp .b{font-size:.84rem;}
+  .vh-cmp .cr.star .b{border-radius:6px;}
+  .vh-eyebrow{font-size:.6rem;letter-spacing:.14em;}
+  .vh-price-add{font-size:.76rem;}
+  .vh-cred{font-size:.68rem;}
 }
 </style>
 </head>
