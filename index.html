@@ -432,7 +432,12 @@ footer b{color:var(--ink2);}
 @media(max-width:640px){
   .vh-cmp .cr{grid-template-columns:1fr 1fr 1fr;}
   .vh-cmp .hd>div:first-child{display:none;}
-  .vh-cmp .cr>div:nth-child(2){border-left:none;}
+  /* 行ごとの分断線をやめ、表全体を貫く連続の列罫線に */
+  .vh-cmp .cr>div:nth-child(n+2){border-left:none;}
+  .vh-cmp .hd>div:nth-child(n+3){border-left:1px solid rgba(245,244,239,.16);}
+  .vh-cmp::before,.vh-cmp::after{content:"";position:absolute;top:0;bottom:0;width:1px;background:var(--line);z-index:3;pointer-events:none;}
+  .vh-cmp::before{left:33.333%;}
+  .vh-cmp::after{left:66.667%;}
   .vh-cmp .lb{grid-column:1/-1;padding:.65rem .8rem .15rem;font-size:.76rem;letter-spacing:.06em;color:var(--acid-ink);}
   .vh-cmp .cr>div{padding:.35rem .4rem .85rem;font-size:.8rem;line-height:1.4;}
   .vh-cmp .hd>div{font-size:.8rem;padding-top:.85rem;padding-bottom:.85rem;}
