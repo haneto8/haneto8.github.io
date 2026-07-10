@@ -293,10 +293,6 @@ button{font-family:inherit;}
   background:linear-gradient(90deg,var(--ink) 50%,var(--ink3) 50%);background-size:200% 100%;background-position:100% 0;
   -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:.5em;}
 .mani p em{font-style:normal;}
-/* 濃くなった少し後に、ライムの蛍光ペンが左→右に引かれる */
-.mani p{position:relative;z-index:0;isolation:isolate;}
-.mani p::before{content:"";position:absolute;left:-.04em;right:-.04em;top:52%;bottom:7%;background:var(--acid);z-index:-1;border-radius:2px;transform:scaleX(0);transform-origin:left center;transition:transform .6s cubic-bezier(.22,1,.36,1) .3s;}
-.mani p.hl::before{transform:scaleX(1);}
 
 /* capabilities */
 .caps{display:block;border-top:1px solid var(--line);}
@@ -322,20 +318,19 @@ button{font-family:inherit;}
 @media(max-width:860px){.proof-wrap{grid-template-columns:1fr;}}
 /* ===== PROOF GRAPH（来店前に調べる根拠） ===== */
 .proof-graph{background:#fff;border:1px solid var(--line);border-radius:20px;padding:clamp(1.7rem,3vw,2.6rem);box-shadow:0 18px 50px -30px rgba(95,122,0,.5);}
-.pg-donut{position:relative;width:clamp(140px,16vw,186px);margin:0 auto .3rem;}
+.pg-donut{position:relative;width:clamp(120px,12vw,160px);margin:0 auto .8rem;}
 .pg-donut svg{width:100%;display:block;transform:rotate(-90deg);}
 .pg-track{fill:none;stroke:var(--line);stroke-width:11;}
-.pg-arc{fill:none;stroke:var(--acid-ink);stroke-width:11;stroke-linecap:round;stroke-dasharray:326.7;stroke-dashoffset:42.8;}
+.pg-arc{fill:none;stroke:var(--acid-ink);stroke-width:11;stroke-linecap:round;stroke-dasharray:326.7;stroke-dashoffset:71.9;}
 .pg-donut-c{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
 .pg-donut-c b{font-family:var(--en);font-weight:700;font-size:clamp(1.9rem,4.4vw,2.7rem);color:var(--ink);letter-spacing:-.01em;}
 .pg-donut-c small{font-size:.5em;color:var(--acid-ink);}
-.pg-cap{text-align:center;font-size:.9rem;color:var(--ink2);margin-bottom:1.7rem;line-height:1.6;}
+.pg-cap{text-align:center;font-size:.88rem;color:var(--ink2);margin-bottom:0;line-height:1.6;}
 .pg-cap b{color:var(--ink);font-weight:700;}
-.pg-bar-top{display:flex;justify-content:space-between;align-items:baseline;font-size:.85rem;color:var(--ink2);margin-bottom:.5rem;gap:.6rem;}
-.pg-bar-top b{font-family:var(--en);font-size:1.25rem;color:var(--acid-ink);}
-.pg-bar{height:12px;background:var(--acid-dim);border-radius:99px;overflow:hidden;}
-.pg-bar i{display:block;height:100%;width:78%;background:var(--acid-ink);border-radius:99px;}
-.pg-src{margin-top:1.3rem;font-size:.62rem;color:var(--ink3);line-height:1.6;}
+.pg-duo{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;align-items:start;}
+.pg-arc.a2{stroke-dashoffset:74.5;}
+.pg-src{margin-top:1.5rem;font-size:.62rem;color:var(--ink3);line-height:1.6;text-align:center;}
+@media(max-width:480px){.pg-duo{grid-template-columns:1fr;gap:1.8rem;}}
 /* ===== 装飾：連絡先両端の粒子（別形状） ===== */
 .contact{position:relative;overflow:hidden;}
 .deco-cloud{position:absolute;top:50%;transform:translateY(-50%);width:clamp(150px,15vw,240px);aspect-ratio:1/1;opacity:.5;pointer-events:none;z-index:0;}
@@ -362,7 +357,7 @@ button{font-family:inherit;}
 .cf-field input,.cf-field textarea{font-family:var(--jp);font-size:.95rem;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:.8rem .9rem;width:100%;transition:border-color .2s ease;}
 .cf-field input::placeholder,.cf-field textarea::placeholder{color:var(--ink3);}
 .cf-field input:focus,.cf-field textarea:focus{outline:none;border-color:var(--acid-ink);box-shadow:0 0 0 3px var(--acid-dim);}
-.cf-field textarea{resize:vertical;min-height:118px;line-height:1.7;}
+.cf-field textarea{resize:vertical;min-height:200px;line-height:1.9;padding:1.1rem 1rem;}
 .cf-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0;overflow:hidden;}
 .cf-submit{margin-top:.3rem;justify-self:start;display:inline-flex;align-items:center;gap:.5rem;background:var(--ink);color:var(--bg);border:none;font-family:var(--jp);font-weight:700;font-size:.95rem;padding:.95rem 2.1rem;border-radius:999px;cursor:pointer;transition:transform .2s ease,opacity .2s ease;}
 .cf-submit:hover{transform:translateY(-2px);}
@@ -390,7 +385,7 @@ footer b{color:var(--ink2);}
 }
 /* ===== VALUE-FIRST HERO（地球儀の代替） ===== */
 .vhero{position:relative;min-height:100svh;display:flex;align-items:center;padding:clamp(6rem,12vh,9rem) clamp(1.25rem,5vw,4rem) 4rem;}
-.vh-grid{width:100%;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(2rem,4vw,3.4rem);align-items:center;}
+.vh-grid{width:100%;max-width:1380px;margin:0 auto;display:grid;grid-template-columns:.92fr 1.28fr;gap:clamp(2rem,4vw,3.4rem);align-items:center;}
 .vh-eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--acid-ink);display:flex;align-items:center;gap:.7rem;margin-bottom:1.4rem;}
 .vh-eyebrow::before{content:"";width:2rem;height:2px;background:var(--acid-ink);}
 .vh-h1{font-family:var(--en);font-weight:900;font-size:clamp(2.1rem,4.9vw,3.9rem);line-height:1.3;letter-spacing:.005em;}
@@ -417,12 +412,12 @@ footer b{color:var(--ink2);}
 .vh-cmp{border:1.5px solid var(--ink);border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 14px 40px rgba(21,23,15,.08);}
 .vh-cmp .cr{display:grid;grid-template-columns:.72fr 1fr 1fr 1.06fr;}
 .vh-cmp .cr+.cr{border-top:1px solid var(--line);}
-.vh-cmp .cr>div{padding:1rem .65rem;font-size:.9rem;line-height:1.32;display:flex;align-items:center;justify-content:center;text-align:center;}
-.vh-cmp .hd>div{font-family:var(--en);font-weight:700;font-size:.92rem;background:var(--ink);color:var(--bg);padding-top:1.1rem;padding-bottom:1.1rem;line-height:1.25;}
-.vh-cmp .hd .roi{color:var(--acid);font-size:1.05rem;}
+.vh-cmp .cr>div{padding:1.05rem .7rem;font-size:.98rem;line-height:1.35;display:flex;align-items:center;justify-content:center;text-align:center;}
+.vh-cmp .hd>div{font-family:var(--en);font-weight:700;font-size:1rem;background:var(--ink);color:var(--bg);padding-top:1.15rem;padding-bottom:1.15rem;line-height:1.25;}
+.vh-cmp .hd .roi{color:var(--acid);font-size:1.15rem;}
 .vh-cmp .lb{font-weight:700;color:var(--ink);justify-content:flex-start!important;text-align:left!important;}
 .vh-cmp .a{color:var(--ink3);}
-.vh-cmp .b{background:var(--acid-dim);font-weight:800;color:var(--ink);font-size:.95rem;}
+.vh-cmp .b{background:var(--acid-dim);font-weight:800;color:var(--ink);font-size:1.02rem;}
 .vh-cmp .cr.star .b{background:rgba(200,255,0,.5);}
 .vh-cmp .cr.star .lb{color:var(--acid-ink);}
 .vh-cmp-note{margin-top:.85rem;font-size:.64rem;color:var(--ink3);line-height:1.55;}
@@ -458,10 +453,6 @@ footer b{color:var(--ink2);}
 </nav>
 
 <!-- HUD -->
-<div class="hud" aria-hidden="true">
-  <div class="bl">FPS <span id="fps">--</span>&nbsp;&nbsp;<span class="blink">●</span> LIVE RENDER</div>
-  <div class="br">VER 2026.07<br>NO FRAMEWORK — CUSTOM PIPELINE</div>
-</div>
 
 <!-- CURSOR -->
 <div class="cur-dot" id="cd"></div>
@@ -520,14 +511,26 @@ footer b{color:var(--ink2);}
           <div class="b">◎ 込み</div>
         </div>
         <div class="cr">
+          <div class="lb">無料デモ</div>
+          <div class="a">なし</div>
+          <div class="a">見積のみ</div>
+          <div class="b">◎ 完成を見て<br>0円で判断OK</div>
+        </div>
+        <div class="cr">
           <div class="lb">サイトの所有</div>
           <div class="a">借り物</div>
-          <div class="a">自社名義</div>
+          <div class="a">御社名義</div>
           <div class="b">御社名義</div>
         </div>
         <div class="cr">
+          <div class="lb">納期の目安</div>
+          <div class="a">数週間〜</div>
+          <div class="a">1〜3ヶ月</div>
+          <div class="b">最短1週間</div>
+        </div>
+        <div class="cr">
           <div class="lb">月々の縛り</div>
-          <div class="a">数ヶ月〜</div>
+          <div class="a">半年〜1年</div>
           <div class="a">管理費あり</div>
           <div class="b">いつでも解約</div>
         </div>
@@ -651,7 +654,7 @@ footer b{color:var(--ink2);}
       </div>
       <div class="cap rv">
         <span class="no">03</span>
-        <div><h3>WEB・システム開発</h3><p>LPから予約・通知・レポート基盤まで。設計と実装をひとりで、だから最速。</p></div>
+        <div><h3>WEB・ホームページ（LP）制作</h3><p>ホームページ・LPから予約・通知・レポート基盤まで。設計と実装をひとりで、だから最速。</p></div>
         <span class="arw">→</span>
       </div>
       <div class="cap rv">
@@ -668,21 +671,28 @@ footer b{color:var(--ink2);}
   <div class="inner">
     <p class="sec-tag">Why Web &amp; AI</p>
     <div class="proof-wrap">
-      <div class="proof-graph rv" role="img" aria-label="来店前にネットで調べて院を選ぶ人が多いことを示すデータ">
-        <div class="pg-donut">
-          <svg viewBox="0 0 120 120"><circle class="pg-track" cx="60" cy="60" r="52"/><circle class="pg-arc" cx="60" cy="60" r="52"/></svg>
-          <div class="pg-donut-c"><b>86.9<small>%</small></b></div>
+      <div class="proof-graph rv" role="img" aria-label="来店前にネットで調べる人・初めての店に不安を感じる人が多いことを示すデータ">
+        <div class="pg-duo">
+          <div class="pg-item">
+            <div class="pg-donut">
+              <svg viewBox="0 0 120 120"><circle class="pg-track" cx="60" cy="60" r="52"/><circle class="pg-arc" cx="60" cy="60" r="52"/></svg>
+              <div class="pg-donut-c"><b>78<small>%</small></b></div>
+            </div>
+            <p class="pg-cap"><b>来店前にネットで下調べ</b>する人の割合</p>
+          </div>
+          <div class="pg-item">
+            <div class="pg-donut">
+              <svg viewBox="0 0 120 120"><circle class="pg-track" cx="60" cy="60" r="52"/><circle class="pg-arc a2" cx="60" cy="60" r="52"/></svg>
+              <div class="pg-donut-c"><b>77<small>%</small></b></div>
+            </div>
+            <p class="pg-cap"><b>初めてのお店に「不安」</b>を感じる人の割合</p>
+          </div>
         </div>
-        <p class="pg-cap"><b>院選びで「口コミ」を参考にする</b>人の割合</p>
-        <div class="pg-bar-wrap">
-          <div class="pg-bar-top"><span>来店前にネットで下調べする</span><b>78%</b></div>
-          <div class="pg-bar"><i></i></div>
-        </div>
-        <p class="pg-src">出典：インターリンク（2022, n=1,000）／ Pathee（2021, n=4,411）</p>
+        <p class="pg-src">出典：Pathee（2021, n=4,411）／ くふうしずおか WOMO（2020, n=277）</p>
       </div>
       <div class="proof-note rv">
         <p style="font-weight:900;font-size:clamp(1.5rem,4vw,2.4rem);color:var(--ink);line-height:1.4;margin-bottom:1.2rem;">来店の前に、<br>選ばれている。</p>
-        <p>いまのお客様は、行く前に必ずスマホで調べます。<b>ネットで見つからない・情報が古い</b>お店は、それだけで候補から外れる時代。ホームページと予約導線は、もう「あった方がいい」ではなく<span class="acid">「ないと選ばれない」インフラ</span>になりました。</p>
+        <p>いまのお客様は、行く前にスマホで調べます。<b>ネットで見つからない・情報が古い</b>お店は、それだけで候補から外れる時代。ホームページと予約導線は、もう「あった方がいい」ではなく<span class="acid">「ないと選ばれない」インフラ</span>になりました。</p>
         <p style="margin-top:1rem;">同じ変化は、お店の裏側でも起きています。予約管理・問い合わせ・集客の分析——手作業で消耗していた時間は、<b>WEBとAIで肩代わりできます</b>。roisionは、その“最先端の当たり前”を、地方のお店にも届けます。</p>
       </div>
     </div>
@@ -695,8 +705,7 @@ footer b{color:var(--ink2);}
   <canvas class="deco-cloud r" id="cloudB" aria-hidden="true"></canvas>
   <div class="inner">
     <p class="sec-tag" style="justify-content:center;">Contact</p>
-    <p class="big rv">話し<span class="acid">ましょう</span>。</p>
-    <p class="resp" style="margin-top:1.2rem;">気軽にお問い合わせください。</p>
+    <p class="big rv" style="font-size:clamp(1.9rem,5.6vw,4.2rem);">気軽に<span class="acid">お問い合わせ</span>ください。</p>
 
     <!-- ▼ お問い合わせフォーム：access_key の YOUR_ACCESS_KEY を Web3Forms のアクセスキーに差し替えてください ▼ -->
     <form id="contactForm" class="cform rv" action="https://api.web3forms.com/submit" method="POST">
@@ -746,7 +755,6 @@ footer b{color:var(--ink2);}
 
 <footer>
   <span><b>© 2026 ROISION</b> — All rights reserved.</span>
-  <span>Imagery: NASA GIBS ／ 国土地理院 全国最新写真を加工して作成</span>
   <span><b>No frameworks.</b> Hand-built pipeline.</span>
 </footer>
 
@@ -1064,9 +1072,6 @@ function onScroll(){
 addEventListener('scroll',onScroll,{passive:true});onScroll();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}}),{threshold:.15});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-/* manifesto: 文字が濃くなった後に蛍光ペンを引く（行が7.5割見えたら発火→CSS側で.3s遅延） */
-const maniIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('hl');maniIO.unobserve(e.target);}}),{threshold:.75});
-maniPs.forEach(p=>maniIO.observe(p));
 
 /* ================= CURSOR ================= */
 if(!isTouch && !reduced){
